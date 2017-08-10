@@ -48,3 +48,11 @@ $this->doaction(插件名)获取插件实例
 微信接口：wx
 易班开放接口：yiban
 curl接口：netclient
+具体的方法请看源码嘿嘿
+token机制：
+Eye整体已经不再使用session这个玩意所以保存用户信息就使用了token机制
+用户登录的时候会颁发给用户token字符串，用户以后请求的时候就用token代表用户的id
+参考：
+userController.php loginService
+$this->token($this, $db, $token)返回用户id //db是数据库实例，因为为了方便测试开发，直接将token和用户绑定到了数据库里，redis扩展请移步boot框架。
+
