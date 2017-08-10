@@ -43,4 +43,8 @@ MVC结构：
 
 插件功能：
 $this->doaction(插件名)获取插件实例
-
+已经有的插件：
+邮件：mailer
+微信接口：wx
+易班开放接口：yiban
+curl接口：netclient
