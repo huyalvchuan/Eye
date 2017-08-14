@@ -37,6 +37,7 @@ class Eye
 		$Request_url=$_SERVER['REQUEST_URI'];
 		if(ROUTERTYPE == "common") {
 			$Request_url = $_SERVER['REQUEST_URI'];
+			$Request_url = explode('?', $Request_url)[0];
 			$result =  pathinfo($Request_url);
 			self::$m_class=pathinfo(pathinfo($Request_url)["dirname"])["basename"]."Controller";
 			self::$m_method = $result["basename"];
