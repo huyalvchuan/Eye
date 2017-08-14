@@ -75,15 +75,15 @@ class Eye
 	}
 	
 	public function Assign($key, $value) {
-	require_once $_SERVER['DOCUMENT_ROOT'].'/EasyEye/Eye/Utils/ViewPlugins/Smarty/Smarty.class.php';
-	$this->smarty=$this->smarty==null?new Smarty:$this->smarty;
-	$this->smarty->compile_dir= $_SERVER['DOCUMENT_ROOT']."/EasyEye/Core/ViewCache/";
-	$this->smarty->config_dir= $_SERVER['DOCUMENT_ROOT']."/EasyEye/Eye/Utils/ViewPlugins/Smarty/configs/";
-	$this->smarty->cache_dir= $_SERVER['DOCUMENT_ROOT']."/EasyEye/Core/ViewCache/";
-	$this->smarty->left_delimiter='<{';
-	$this->smarty->right_delimiter='}>';
-	$this->smarty->assign($key, $value);
-		
+		require_once $_SERVER['DOCUMENT_ROOT'].'/EasyEye/Eye/Utils/ViewPlugins/Smarty/Smarty.class.php';
+		$this->smarty=$this->smarty==null?new Smarty:$this->smarty;
+		$this->smarty->compile_dir= $_SERVER['DOCUMENT_ROOT']."/EasyEye/Core/ViewCache/";
+		$this->smarty->config_dir= $_SERVER['DOCUMENT_ROOT']."/EasyEye/Eye/Utils/ViewPlugins/Smarty/configs/";
+		$this->smarty->cache_dir= $_SERVER['DOCUMENT_ROOT']."/EasyEye/Core/ViewCache/";
+		$this->smarty->left_delimiter='<{';
+		$this->smarty->right_delimiter='}>';
+		$this->smarty->assign($key, $value);
+			
 	}
 	
 	public function __set($key, $value){
