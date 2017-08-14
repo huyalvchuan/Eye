@@ -47,4 +47,6 @@ MVC结构：
    
 ## 插件功能：  
 $this->doaction(插件名)获取插件实例  
-
+## token
+参考userController loginService和验证token $this->token($this, $db, $token)返回uIdps
+ps:这个版本使用了mysql存储token，各位可以自己使用eye的redis功能自行设计
