@@ -60,7 +60,10 @@ class Eye
 	//控制器获取的内容应该为json数据。或者是get，post。
 	 if(!isset(self::$m_valuestack["json"]))
 	 	{
-	   	self::$m_valuestack["json"]=file_get_contents("php://input");
+	 	if(count($_POST) == 0)
+	   		self::$m_valuestack["json"]=file_get_contents("php://input");
+		else 
+			self::$m_valuestack["json"] = json_encode($_POST);
 	 	}
 	 if($name!="json")
 	 	{
