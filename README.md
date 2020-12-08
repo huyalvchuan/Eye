@@ -28,6 +28,7 @@ https://github.com/huyalvchuan/Eye-GenerateTool.git
     
 ## 入门指南：  
 如果我要定义一个api接口为：localhost/index.php/user/login  
+```
 class userController extends Eye {  
 		function login () {   
 			$request = $this->I("json");    //获取json数据  
@@ -35,6 +36,7 @@ class userController extends Eye {
 			$db=$this->M(); //获取数据库操作实例  
 		}  
 }
+```
 文件命名为：userController.php 不符合命名规范不过这是自己定义的规范
 获取数据 $this->I("json")获取json数据 预处理：跨域，拦截空操作
 $this->response(状态码，msg，返回的数据["user"=>[]])
@@ -44,19 +46,19 @@ MVC结构：
 赋值：$this->Assign($key, $value)
 显示模板：$this->Display(模板名字) 模板放在View里面，命名规则：名字.html   具体的操作请参照Smarty的模板规则
 
-插件功能：
-$this->doaction(插件名)获取插件实例
-已经有的插件：
-邮件：mailer
-微信接口：wx
-易班开放接口：yiban
-curl接口：netclient
-具体的方法请看源码嘿嘿
-token机制：
-Eye整体已经不再使用session这个玩意所以保存用户信息就使用了token机制
-用户登录的时候会颁发给用户token字符串，用户以后请求的时候就用token代表用户的id
-参考：
-userController.php loginService
+### 插件功能：
+$this->doaction(插件名)获取插件实例 
+已经有的插件： 
+邮件：mailer 
+微信接口：wx 
+易班开放接口：yiban 
+curl接口：netclient 
+具体的方法请看源码嘿嘿 
+token机制： 
+Eye整体已经不再使用session这个玩意所以保存用户信息就使用了token机制 
+用户登录的时候会颁发给用户token字符串，用户以后请求的时候就用token代表用户的id 
+参考 ：
+userController.php loginService 
 $this->token($this, $db, $token)返回用户id //db是数据库实例，因为为了方便测试开发，直接将token和用户绑定到了数据库里，redis扩展请移步boot框架。
 文件命名为：userController.php 不符合命名规范不过这是自己定义的规范  
 获取数据 $this->I("json")获取json数据 预处理：跨域，拦截空操作  
@@ -67,5 +69,5 @@ MVC结构：
 赋值：$this->Assign($key, $value)  
 显示模板：$this->Display(模板名字) 模板放在View里面，命名规则：名字.html   具体的操作请参照Smarty的模板规则  
    
-## 插件功能：  
+###  插件功能：  
 $this->doaction(插件名)获取插件实例  
